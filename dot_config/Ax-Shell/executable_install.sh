@@ -38,6 +38,7 @@ PACKAGES=(
   swww
   tesseract
   tmux
+  ttf-nerd-fonts-symbols-mono
   unzip
   uwsm
   webp-pixbuf-loader

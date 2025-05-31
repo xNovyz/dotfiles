@@ -26,11 +26,22 @@ EOF
 }
 
 case $1 in
-p) hyprshot -s -m output -o "$save_dir" -f "$save_file" ;;
-s) hyprshot -s -m region -o "$save_dir" -f "$save_file" ;;
-sf) hyprshot -s -z -m region -o "$save_dir" -f "$save_file" ;;
-m) hyprshot -s -m output -m active -o "$save_dir" -f "$save_file" ;;
-w) hyprshot -s -m window -o "$save_dir" -f "$save_file" ;; # Added window capture
+p) hyprshot -z -s -m output -o "$save_dir" -f "$save_file" ;;
+s) hyprshot -z -s -m region -o "$save_dir" -f "$save_file" ;;
+sf) hyprshot -z -s -z -m region -o "$save_dir" -f "$save_file" ;;
+m) hyprshot -z -s -m output -m active -o "$save_dir" -f "$save_file" ;;
+w)
+    # Capture output and status of hyprshot
+    hyprshot_output=$(hyprshot -z -s -m window -o "$save_dir" -f "$save_file" 2>&1)
+    hyprshot_status=$?
+
+    if [ $hyprshot_status -ne 0 ]; then
+        echo "hyprshot failed with status $hyprshot_status. Output:" >&2
+        echo "$hyprshot_output" >&2
+        # Exit the script with an error status so the notification "Screenshot Aborted" is shown
+        exit 1
+    fi
+    ;; # End of case 'w'
 *)
     print_error
     exit 1
