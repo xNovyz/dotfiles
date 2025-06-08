@@ -1,0 +1,3 @@
+#!/bin/bash
+bash ~/.local/share/chezmoi/run/gnome-setup.sh
+
