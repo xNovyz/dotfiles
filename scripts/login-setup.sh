@@ -21,7 +21,7 @@ echo
 echo "${green}[1/7] Installing greetd and tuigreet...${normal}"
 sudo pacman -S --noconfirm greetd
 if ! command -v tuigreet &>/dev/null; then
-  yay -S --noconfirm greetd-tuigreet-git || true
+  yay -S --noconfirm greetd-tuigreet-bin || true
 fi
 
 echo "${green}[2/7] Installing console font package...${normal}"
@@ -32,7 +32,7 @@ sudo tee /etc/greetd/tuigreet-wrapper.sh >/dev/null <<'EOF'
 #!/bin/bash
 
 # Set console font (requires root)
-setfont /usr/share/kbd/consolefonts/Lat2-Terminus16.psf.gz
+setfont /usr/share/kbd/consolefonts/Lat2-Terminus16.psfu.gz
 
 # Launch tuigreet
 exec /usr/bin/tuigreet --user-menu --remember --remember-user-session --time \
