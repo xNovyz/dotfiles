@@ -40,6 +40,19 @@ exec /usr/bin/tuigreet --user-menu --remember --remember-user-session --time \
   --theme border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red
 EOF
 
+sudo tee /etc/greetd/launch-session.sh >/dev/null <<'EOF'
+#!/bin/bash
+
+# Launch Hyprland if available, fallback to TTY session
+if command -v Hyprland &>/dev/null; then
+  exec Hyprland
+else
+  echo "Hyprland not found. Launching TTY shell fallback..."
+  exec /bin/bash
+fi
+EOF
+sudo chmod +x /etc/greetd/launch-session.sh
+
 echo "${green}[4/7] Setting permissions for wrapper...${normal}"
 sudo chown root:greeter /etc/greetd/tuigreet-wrapper.sh
 sudo chmod 750 /etc/greetd/tuigreet-wrapper.sh
