@@ -1,7 +1,8 @@
 #!/bin/bash
-
-echo "Nautilus setup script ver 0.2 by Novyz"
-
+echo "//////////////////////////////////////////////////"
+echo "      Nautilus setup script ver 0.2 by Novyz"
+echo "//////////////////////////////////////////////////"
+echo
 echo "[1/3] Installing nautilus..."
 sudo pacman -S nautilus
 
