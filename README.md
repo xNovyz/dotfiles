@@ -4,8 +4,7 @@ This is my personal collection of dotfiles, managed with [chezmoi](https://www.c
 
 ## ⚡ Quick Setup
 
-> 📦 Requires: [chezmoi installed](https://www.chezmoi.io/install/)
-
+> 📦 Requires: nothing
 To install these dotfiles on a new machine:
 
 ```bash
