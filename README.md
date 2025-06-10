@@ -18,16 +18,15 @@ Then initialize chezmoi with my dots:
 chezmoi init xNovyz
 ```
 
-Now you are ready to apply the dots:
+### Now you are ready to apply the dots:
 
-⚠️ Carefull! chezmoi will overwrite all your current cofigs so make backup before you apply
+⚠️ Heads up! Chezmoi will overwrite your current configurations. We highly recommend making backups before proceeding.
 
-  if you want to the changes before applying use this command:
+  To preview the changes chezmoi will make without applying them, run:
   ```bash
   chezmoi diff
   ```
-  Ok, now that you have made the backups and saw what would be changed apply everything with:
-
+  Ok, now that you've made the backups and seen what will be changed, you can apply everything by running:
   ```bash
   chezmoi apply
   ```
