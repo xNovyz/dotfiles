@@ -6,5 +6,20 @@ This is my personal collection of dotfiles, managed with [chezmoi](https://www.c
 
 To install these dotfiles on a new machine:
 
+First install chezmoi:
+
 ```bash
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply xNovyz
+sudo pacman -S chezmoi
+```
+
+Then initialize chemoi with my dots:
+
+```bash
+chezmoi init xNovyz
+```
+
+Now you are ready to apply the dots:
+
+```bash
+chezmoi apply
+```
