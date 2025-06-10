@@ -12,7 +12,7 @@ First install chezmoi:
 sudo pacman -S chezmoi
 ```
 
-Then initialize chemoi with my dots:
+Then initialize chezmoi with my dots:
 
 ```bash
 chezmoi init xNovyz
