@@ -23,7 +23,7 @@ chezmoi init xNovyz
 
 ### Now you are ready to apply the dots:
 
-⚠️ Heads up! Chezmoi will overwrite your current configurations. We highly recommend making backups before proceeding.
+⚠️ Heads up! Chezmoi will overwrite your current configurations. I highly recommend making backups before proceeding.
 
   To preview the changes chezmoi will make without applying them, run:
   ```bash
