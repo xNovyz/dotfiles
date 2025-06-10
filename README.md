@@ -1,6 +1,7 @@
 # xNovyz's Dotfiles
 
 This is my personal collection of dotfiles, managed with [chezmoi](https://www.chezmoi.io/).
+![preview](https://github.com/user-attachments/assets/00cf33b7-f28c-4389-8d77-e04acd5222cf)
 
 ## ⚡ Quick Setup
 
