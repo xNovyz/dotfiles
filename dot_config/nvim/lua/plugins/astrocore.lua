@@ -1,4 +1,4 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+--if true then return {} end  REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
@@ -58,7 +58,6 @@ return {
       -- first key is the mode
       n = {
         -- second key is the lefthand side of the map
-
         -- navigate buffer tabs
         ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
@@ -72,6 +71,10 @@ return {
           end,
           desc = "Close buffer from tabline",
         },
+        ["<C-S-s>"] = {
+          ":%s///gc<left><left><left>",
+          desc = "Search and Replace All (with confirmation)",
+        },
 
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
@@ -79,6 +82,38 @@ return {
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
+        -- Shift + Arrows to start a visual selection
+        ["<S-Left>"] = { "v<Left>", desc = "Start selection left" },
+        ["<S-Right>"] = { "v<Right>", desc = "Start selection right" },
+        ["<S-Up>"] = { "v<Up>", desc = "Start selection up" },
+        ["<S-Down>"] = { "v<Down>", desc = "Start selection down" },
+        -- Ctrl + Shift + Arrows to start a word-wise visual selection
+        ["<C-S-Left>"] = { "v<C-Left>", desc = "Start word-wise selection left" },
+        ["<C-S-Right>"] = { "v<C-Right>", desc = "Start word-wise selection right" },
+      },
+
+      x = {
+        -- Shift + Arrows to extend the selection
+        ["<S-Left>"] = { "<Left>", desc = "Extend selection left" },
+        ["<S-Right>"] = { "<Right>", desc = "Extend selection right" },
+        ["<S-Up>"] = { "<Up>", desc = "Extend selection up" },
+        ["<S-Down>"] = { "<Down>", desc = "Extend selection down" },
+        -- Ctrl + Shift + Arrows to extend word-wise selection
+        ["<C-S-Left>"] = { "<C-Left>", desc = "Extend word-wise selection left" },
+        ["<C-S-Right>"] = { "<C-Right>", desc = "Extend word-wise selection right" },
+      },
+      i = {
+        -- Shift + Arrows to start a visual selection from insert mode
+        ["<S-Left>"] = { "<ESC>v<Left>", desc = "Start selection left" },
+        ["<S-Right>"] = { "<ESC>v<Right>", desc = "Start selection right" },
+        ["<S-Up>"] = { "<ESC>v<Up>", desc = "Start selection up" },
+        ["<S-Down>"] = { "<ESC>v<Down>", desc = "Start selection down" },
+        -- Ctrl + Shift + Arrows to start a word-wise selection from insert mode
+        ["<C-S-Left>"] = { "<ESC>v<C-Left>", desc = "Start word-wise selection left" },
+        ["<C-S-Right>"] = { "<ESC>v<C-Right>", desc = "Start word-wise selection right" },
+        -- Word Deletion Mappings
+        ["<C-BS>"] = { "<C-w>", desc = "Delete previous word" },
+        ["<C-Del>"] = { "<C-o>de", desc = "Delete next word" },
       },
     },
   },

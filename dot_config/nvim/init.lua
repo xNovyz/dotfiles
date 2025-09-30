@@ -23,5 +23,8 @@ if not pcall(require, "lazy") then
   vim.cmd.quit()
 end
 
+vim.opt.termguicolors = true
+vim.g.kitty_keyboard_protocol = true
+
 require "lazy_setup"
 require "polish"
